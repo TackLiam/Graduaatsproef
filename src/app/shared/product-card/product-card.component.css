@@ -1,0 +1,67 @@
+p {
+  color: #0a316a;
+}
+
+.card {
+  border: 1px solid #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: auto;
+}
+
+.imgContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.productImg {
+  height: 160px;
+  width: 160px;
+  object-fit: contain;
+}
+
+.nutriScoreImg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: end;
+}
+.priceType {
+  text-align: end;
+}
+
+.brand {
+  font-size: 0.8rem;
+}
+.addBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  background-color: #0970e6;
+  border: 0;
+  border-radius: 20px;
+  height: 40px;
+  cursor: pointer;
+}
+.addBtn svg {
+  height: 1.5rem;
+  width: auto;
+  fill: white;
+}
+
+.addBtn p {
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+}
+
+.addBtn:hover {
+  background-color: #004e9e;
+}

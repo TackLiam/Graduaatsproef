@@ -1,0 +1,36 @@
+.productsBtn {
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  background-color: #f5faff;
+  border: none;
+  cursor: pointer;
+}
+.productsBtn.toggle {
+  background-color: #0970e6 !important;
+}
+.productsBtn.toggle p {
+  color: white;
+}
+.productsBtn.toggle svg path {
+  stroke: white;
+}
+
+.productsBtn:hover {
+  background-color: #e0efff;
+}
+
+.productsBtn p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #0970e6;
+}
+.productsBtn svg {
+  height: 2rem;
+  width: auto;
+}
+.productsBtn svg path {
+  stroke: #0970e6;
+}

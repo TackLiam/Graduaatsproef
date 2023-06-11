@@ -1,0 +1,133 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 60px;
+  border-bottom: 1px solid #f4f4f4;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header.sticky {
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 1, 0.04);
+}
+
+.inputContainer {
+  display: flex;
+}
+app-sidebar-btn {
+  height: inherit;
+}
+
+.zoekbalk {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 50px;
+  margin: 0 20px;
+  align-items: center;
+}
+
+.zoekbalkInput {
+  width: inherit;
+  height: inherit;
+  padding: 0 80px;
+  background-color: #f4f4f4;
+  color: #a7a7a7;
+  border-radius: 100px;
+  font-size: 1rem;
+  border: none;
+  outline: 1px solid tra;
+}
+
+.zoekbalkInput::placeholder {
+  color: #a7a7a7;
+}
+
+.zoekbalkInput:focus {
+  outline: 1px solid #0970e6;
+}
+
+.zoekbalkBtn {
+  position: absolute;
+  background-color: transparent;
+  margin: 0 20px;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: none;
+}
+.zoekbalkBtn svg {
+  height: 1.5rem;
+  width: auto;
+  fill: #0970e6;
+}
+.zoekbalkBtn svg path {
+  stroke-width: 2;
+}
+.zoekbalkBtn:hover svg {
+  fill: #004e9e;
+}
+
+.zoekbalkBtnSearch {
+  left: 0;
+  right: auto;
+}
+.zoekbalkBtnSearch.active {
+  left: auto;
+  right: 0;
+}
+
+.zoekbalkBtnClear {
+  display: none;
+}
+.zoekbalkBtnClear.active {
+  display: flex;
+}
+
+.winkelMandjeBtn {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  position: relative;
+}
+
+.winkelMandjeBtn svg {
+  height: 1.5rem;
+  width: auto;
+  fill: #0970e6;
+}
+
+.winkelMandjeTxt {
+  color: #575757;
+  font-size: 0.8rem;
+}
+.winkelMandjeBtn:hover svg {
+  fill: #004e9e;
+}
+.winkelMandjeBtn:hover p {
+  color: #004e9e;
+}
+
+.homeBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.totalQuantity {
+  position: absolute;
+  top: -8px;
+  right: -4px;
+  background-color: #4ccd8a;
+  border: 1px solid white;
+  color: white !important;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 1px 6px;
+}

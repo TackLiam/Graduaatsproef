@@ -1,0 +1,9 @@
+<div class="container">
+  <p class="title">{{ category?.name }}</p>
+  <div class="productContainer">
+    <app-product-card
+      *ngFor="let product of products"
+      [product]="product"
+    ></app-product-card>
+  </div>
+</div>

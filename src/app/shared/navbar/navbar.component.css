@@ -1,0 +1,26 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 0 60px;
+  border-bottom: 1px solid #f4f4f4;
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 1, 0.04);
+  background-color: white;
+  position: relative;
+}
+app-sidebar-btn {
+  height: inherit;
+}
+
+.languageBtn {
+  padding: 0 0 0 20px;
+  height: inherit;
+  border: none;
+  background-color: transparent;
+  border-left: 1px solid #f4f4f4;
+  cursor: pointer;
+}
+.languageBtn:hover {
+  color: #0970e6;
+}

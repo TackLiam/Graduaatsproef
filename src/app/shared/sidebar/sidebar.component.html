@@ -1,0 +1,10 @@
+<div class="sidebar">
+  <button
+    (click)="toggleSidebar()"
+    class="categoryBtn"
+    *ngFor="let category of categories"
+    routerLink="/categorie/{{ category.id }}"
+  >
+    {{ category.name }}
+  </button>
+</div>

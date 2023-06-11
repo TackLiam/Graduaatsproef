@@ -1,0 +1,21 @@
+.container {
+  padding: 0 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  border-bottom: 2px solid #e0efff;
+  color: #0a316a;
+  font-weight: bold;
+  margin: 40px 0 20px 0;
+}
+
+.productContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  justify-content: center;
+  margin-bottom: 20px;
+}

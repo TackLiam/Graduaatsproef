@@ -1,0 +1,158 @@
+<p class="title">Mijn mandje</p>
+<div class="container">
+  <div class="shoppingCart">
+    <div *ngFor="let cartItem of cartItems" class="cartItem">
+      <div class="left">
+        <img
+          src="../../../assets/images/producten/{{ cartItem.product.id }}.jpg"
+          alt="{{ cartItem.product.name }}"
+        />
+        <div class="infoContainer">
+          <p class="nameTxt">
+            {{ cartItem.product.name }} | {{ cartItem.product.brand }}
+          </p>
+          <p class="priceTxt">
+            {{
+              cartItem.product.price.toLocaleString("nl-NL", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+              })
+            }}
+            {{ cartItem.product.priceType.type }}
+          </p>
+        </div>
+      </div>
+      <div class="right">
+        <div class="quantityContainer">
+          <button
+            (click)="decreaseQuantity(cartItem.product.id)"
+            class="quantityBtn"
+          >
+            <svg width="24px" height="24px" viewBox="0 0 24 24">
+              <line
+                fill="none"
+                stroke="#000000"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                x1="4"
+                x2="20"
+                y1="12"
+                y2="12"
+              />
+            </svg>
+          </button>
+          <p>{{ cartItem.quantity }}</p>
+          <button
+            (click)="increaseQuantity(cartItem.product.id)"
+            class="quantityBtn"
+          >
+            <svg width="24px" height="24x" viewBox="0 0 24 24">
+              <line
+                fill="none"
+                stroke="#000000"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                x1="12"
+                x2="12"
+                y1="20"
+                y2="4"
+              />
+              <line
+                fill="none"
+                stroke="#000000"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                x1="4"
+                x2="20"
+                y1="12"
+                y2="12"
+              />
+            </svg>
+          </button>
+        </div>
+        <p class="totalProductPrice">
+          {{
+            cartItem.totalPrice.toLocaleString("nl-NL", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2
+            })
+          }}
+          €
+        </p>
+        <button class="deleteBtn" (click)="removeFromCart(cartItem.product.id)">
+          <svg width="24" height="24" viewBox="0 0 32 32">
+            <path
+              d="M8 26c0 1.656 1.343 3 3 3h10c1.656 0 3-1.344 3-3l2-16h-20l2 16zM19 13h2v13h-2v-13zM15 13h2v13h-2v-13zM11 13h2v13h-2v-13zM25.5 6h-6.5c0 0-0.448-2-1-2h-4c-0.553 0-1 2-1 2h-6.5c-0.829 0-1.5 0.671-1.5 1.5s0 1.5 0 1.5h22c0 0 0-0.671 0-1.5s-0.672-1.5-1.5-1.5z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="paymentContainer">
+    <p class="paymentTitle">Samenvatting</p>
+    <div class="promoContainer">
+      <input
+        type="text"
+        [placeholder]="!isReadOnly ? 'Voer een promocode in' : 'Goedgekeurd!'"
+        class="promoInput"
+        [(ngModel)]="promoValue"
+        (keydown.enter)="checkPromo()"
+        [readOnly]="isReadOnly"
+        [disabled]="isReadOnly"
+      />
+      <button
+        class="promoBtn"
+        [class.active]="promoValue !== ''"
+        (click)="checkPromo()"
+      >
+        <svg width="24px" height="24px" viewBox="0 0 1920 1920">
+          <path
+            d="M1743.858 267.012 710.747 1300.124 176.005 765.382 0 941.387l710.747 710.871 1209.24-1209.116z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+    <div class="normalContainer">
+      <p class="txtnormal">Totaal zonder promoties</p>
+      <p class="amountnormal">
+        {{
+          cartPrice.toLocaleString("nl-NL", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+          })
+        }}
+        €
+      </p>
+    </div>
+    <div class="discountContainer">
+      <p class="txtDiscount">Je hebt bespaard</p>
+      <p class="amountDiscount">
+        {{
+          promoPrice.toLocaleString("nl-NL", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+          })
+        }}
+        €
+      </p>
+    </div>
+    <div class="totaalContainer">
+      <p class="txtTotaal">Totaal</p>
+      <p class="amountTotaal">
+        {{
+          totalPrice.toLocaleString("nl-NL", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+          })
+        }}
+        €
+      </p>
+    </div>
+    <button class="payBtn">Mijn mandje bevestigen</button>
+  </div>
+</div>

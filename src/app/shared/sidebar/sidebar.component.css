@@ -1,0 +1,20 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.categoryBtn {
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #f4f4f4;
+  text-align: start;
+  font-size: 1rem;
+  padding: 0 4rem;
+  cursor: pointer;
+}
+
+.categoryBtn:hover {
+  background-color: #e0efff;
+}

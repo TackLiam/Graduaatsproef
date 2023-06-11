@@ -1,0 +1,71 @@
+<header [class.sticky]="isNavBarVisible == true">
+  <button routerLink="/" class="homeBtn">
+    <img
+      src="../assets/carrefour-logo.svg"
+      alt="carrefour"
+      class="carrefourLogo"
+    />
+  </button>
+
+  <app-sidebar-btn
+    (showSidebarEvent)="toggleSidebar()"
+    [showSidebar]="showSidebar"
+    *ngIf="isNavBarVisible"
+    [@scaleInAnimation]
+  ></app-sidebar-btn>
+  <div class="zoekbalk">
+    <input
+      type="text"
+      placeholder="Melk, eieren, brood, ..."
+      class="zoekbalkInput"
+      [(ngModel)]="zoekbalkValue"
+      (keydown.enter)="SearchInput()"
+    />
+    <button
+      class="zoekbalkBtnSearch zoekbalkBtn"
+      (click)="SearchInput()"
+      [class.active]="zoekbalkValue !== ''"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        x="0px"
+        y="0px"
+        width="50"
+        height="50"
+        viewBox="0 0 50 50"
+      >
+        <path
+          d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z"
+        ></path>
+      </svg>
+    </button>
+    <button
+      class="zoekbalkBtnClear zoekbalkBtn"
+      (click)="clearInput()"
+      [class.active]="zoekbalkValue !== ''"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        x="0px"
+        y="0px"
+        width="50"
+        height="50"
+        viewBox="0 0 50 50"
+      >
+        <path
+          d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"
+        ></path>
+      </svg>
+    </button>
+  </div>
+  <button class="winkelMandjeBtn" routerLink="/winkelmandje">
+    <svg width="800px" height="800px" viewBox="0 0 512 512">
+      <path
+        d="M7.10542736e-15,-1.42108547e-14 L70.3622093,-1.42108547e-14 L89.7493333,85.3333333 L378.389061,85.3333333 L337.246204,277.333333 L89.6377907,277.333333 L36.288,42.6666667 L7.10542736e-15,42.6666667 L7.10542736e-15,-1.42108547e-14 Z M325.610667,128 L99.456,128 L123.690667,234.666667 L302.741333,234.666667 L325.610667,128 Z M138.666667,384 C156.339779,384 170.666667,369.673112 170.666667,352 C170.666667,334.326888 156.339779,320 138.666667,320 C120.993555,320 106.666667,334.326888 106.666667,352 C106.666667,369.673112 120.993555,384 138.666667,384 Z M288,384 C305.673112,384 320,369.673112 320,352 C320,334.326888 305.673112,320 288,320 C270.326888,320 256,334.326888 256,352 C256,369.673112 270.326888,384 288,384 Z"
+        id="Combined-Shape"
+      ></path>
+    </svg>
+    <p class="winkelMandjeTxt">Mandje</p>
+    <p class="totalQuantity">{{ totalQuantity }}</p>
+  </button>
+</header>
