@@ -16,7 +16,7 @@
   <div class="zoekbalk">
     <input
       type="text"
-      placeholder="Melk, eieren, brood, ..."
+      placeholder="{{ inputPlaceholder }}"
       class="zoekbalkInput"
       [(ngModel)]="zoekbalkValue"
       (keydown.enter)="SearchInput()"
@@ -65,7 +65,7 @@
         id="Combined-Shape"
       ></path>
     </svg>
-    <p class="winkelMandjeTxt">Mandje</p>
+    <p class="winkelMandjeTxt">{{ shoppingCart }}</p>
     <p class="totalQuantity">{{ totalQuantity }}</p>
   </button>
 </header>

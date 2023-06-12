@@ -1,0 +1,20 @@
+{
+  "language": "fr",
+  "header.shoppingcart": "Panier",
+  "header.inputPlaceholder": "Lait, œufs, pain, ...",
+  "productBtn": "Produits",
+  "navbar.languageBtn": "FR",
+  "productCard.orderBtn": "Commander",
+  "mainpage.title": "Notre sélection en ligne",
+  "searchpage.resultSingular": "résultat trouvé pour: ",
+  "searchpage.resultPlural": "résultats trouvés pour: ",
+  "shoppingcartpage.title": "Mon panier",
+  "shoppingcartpage.summary": "Résumé",
+  "shoppingcartpage.inputPlaceholder": "Entrez un code promotionnel",
+  "shoppingcartpage.inputAllowed": "Approuvé!",
+  "shoppingcartpage.cartAmount": "Total sans promotions",
+  "shoppingcartpage.promoAmount": "Vous avez économisé",
+  "shoppingcartpage.total": "Total",
+  "shoppingcartpage.confirmBtn": "Valider mon panier",
+  "shoppingcartpage.removeCartItems": "Vider mon panier"
+}

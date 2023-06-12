@@ -1,0 +1,20 @@
+{
+  "language": "nl",
+  "header.shoppingcart": "Mandje",
+  "header.inputPlaceholder": "Melk, eieren, brood, ...",
+  "productBtn": "Producten",
+  "navbar.languageBtn": "NL",
+  "productCard.orderBtn": "Bestellen",
+  "mainpage.title": "Ons online aanbod",
+  "searchpage.resultSingular": "resultaat gevonden voor: ",
+  "searchpage.resultPlural": "resultaten gevonden voor: ",
+  "shoppingcartpage.title": "Mijn mandje",
+  "shoppingcartpage.summary": "Samenvatting",
+  "shoppingcartpage.inputPlaceholder": "Voer een promocode in",
+  "shoppingcartpage.inputAllowed": "Goedgekeurd!",
+  "shoppingcartpage.cartAmount": "Totaal zonder promoties",
+  "shoppingcartpage.promoAmount": "Je hebt bespaard",
+  "shoppingcartpage.total": "Totaal",
+  "shoppingcartpage.confirmBtn": "Mijn mandje bevestigen",
+  "shoppingcartpage.removeCartItems": "Mijn mandje leegmaken"
+}

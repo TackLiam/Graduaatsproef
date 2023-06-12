@@ -2,12 +2,32 @@ p {
   color: #0e3368;
 }
 
-.title {
-  font-size: 2.5rem;
-  font-weight: bold;
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
   margin: 0 100px 20px 100px;
   padding-top: 40px;
 }
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.emptyBtn {
+  display: flex;
+  align-items: center;
+  color: #0970e6;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-weight: bold;
+}
+
+.emptyBtn svg path {
+  fill: #0970e6;
+}
+
 .container {
   margin: 0 100px 20px 100px;
   display: flex;

@@ -3,5 +3,7 @@
     (showSidebarEvent)="toggleSidebar()"
     [showSidebar]="showSidebar"
   ></app-sidebar-btn>
-  <button class="languageBtn">NL</button>
+  <button class="languageBtn" (click)="switchLanguage()">
+    {{ languageBtn }}
+  </button>
 </div>

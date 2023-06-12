@@ -1,8 +1,8 @@
 <div class="container">
   <p class="title">
     {{ products.length }}
-    {{ products.length === 1 ? " resultaat" : " resultaten" }}
-    gevonden voor: {{ searchTerm }}
+    {{ products.length === 1 ? resultSingular : resultPlural }}
+    {{ searchTerm }}
   </p>
 
   <div class="productContainer">

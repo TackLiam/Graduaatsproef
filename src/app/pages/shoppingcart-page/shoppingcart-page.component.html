@@ -1,4 +1,14 @@
-<p class="title">Mijn mandje</p>
+<div class="titleContainer">
+  <p class="title">{{ title }}</p>
+  <button class="emptyBtn" (click)="clearCart()">
+    <svg width="24" height="24" viewBox="0 0 32 32">
+      <path
+        d="M8 26c0 1.656 1.343 3 3 3h10c1.656 0 3-1.344 3-3l2-16h-20l2 16zM19 13h2v13h-2v-13zM15 13h2v13h-2v-13zM11 13h2v13h-2v-13zM25.5 6h-6.5c0 0-0.448-2-1-2h-4c-0.553 0-1 2-1 2h-6.5c-0.829 0-1.5 0.671-1.5 1.5s0 1.5 0 1.5h22c0 0 0-0.671 0-1.5s-0.672-1.5-1.5-1.5z"
+      ></path>
+    </svg>
+    {{ removeCartItems }}
+  </button>
+</div>
 <div class="container">
   <div class="shoppingCart">
     <div *ngFor="let cartItem of cartItems" class="cartItem">
@@ -92,12 +102,13 @@
       </div>
     </div>
   </div>
+
   <div class="paymentContainer">
-    <p class="paymentTitle">Samenvatting</p>
+    <p class="paymentTitle">{{ summary }}</p>
     <div class="promoContainer">
       <input
         type="text"
-        [placeholder]="!isReadOnly ? 'Voer een promocode in' : 'Goedgekeurd!'"
+        [placeholder]="!isReadOnly ? inputPlaceholder : inputAllowed"
         class="promoInput"
         [(ngModel)]="promoValue"
         (keydown.enter)="checkPromo()"
@@ -118,7 +129,7 @@
       </button>
     </div>
     <div class="normalContainer">
-      <p class="txtnormal">Totaal zonder promoties</p>
+      <p class="txtnormal">{{ cartAmount }}</p>
       <p class="amountnormal">
         {{
           cartPrice.toLocaleString("nl-NL", {
@@ -130,7 +141,7 @@
       </p>
     </div>
     <div class="discountContainer">
-      <p class="txtDiscount">Je hebt bespaard</p>
+      <p class="txtDiscount">{{ promoAmount }}</p>
       <p class="amountDiscount">
         {{
           promoPrice.toLocaleString("nl-NL", {
@@ -142,7 +153,7 @@
       </p>
     </div>
     <div class="totaalContainer">
-      <p class="txtTotaal">Totaal</p>
+      <p class="txtTotaal">{{ total }}</p>
       <p class="amountTotaal">
         {{
           totalPrice.toLocaleString("nl-NL", {
@@ -153,6 +164,6 @@
         €
       </p>
     </div>
-    <button class="payBtn">Mijn mandje bevestigen</button>
+    <button class="payBtn">{{ confirmBtn }}</button>
   </div>
 </div>

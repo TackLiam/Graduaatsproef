@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ShoppingCartService } from '../../core/services/shopping-cart.service';
 import { CartItem } from 'src/app/core/interfaces';
+import { I18nService } from 'src/app/core/services/i18n.service';
 
 @Component({
   selector: 'app-shoppingcart-page',
@@ -8,7 +9,15 @@ import { CartItem } from 'src/app/core/interfaces';
   styleUrls: ['./shoppingcart-page.component.css'],
 })
 export class ShoppingcartPageComponent implements OnInit {
-  constructor(private shoppingCartService: ShoppingCartService) {}
+  title: string = '';
+  summary: string = '';
+  inputPlaceholder: string = '';
+  inputAllowed: string = '';
+  cartAmount: string = '';
+  promoAmount: string = '';
+  total: string = '';
+  confirmBtn: string = '';
+  removeCartItems: string = '';
 
   cartItems: CartItem[] = [];
   cartPrice: number = 0;
@@ -18,8 +27,24 @@ export class ShoppingcartPageComponent implements OnInit {
   promoValue: string = '';
 
   isReadOnly: boolean = false;
+  constructor(
+    private shoppingCartService: ShoppingCartService,
+    private i18nService: I18nService
+  ) {}
 
   ngOnInit(): void {
+    this.i18nService.getTranslations().subscribe((translations) => {
+      this.title = translations['shoppingcartpage.title'];
+      this.summary = translations['shoppingcartpage.summary'];
+      this.inputPlaceholder = translations['shoppingcartpage.inputPlaceholder'];
+      this.inputAllowed = translations['shoppingcartpage.inputAllowed'];
+      this.cartAmount = translations['shoppingcartpage.cartAmount'];
+      this.promoAmount = translations['shoppingcartpage.promoAmount'];
+      this.total = translations['shoppingcartpage.total'];
+      this.confirmBtn = translations['shoppingcartpage.confirmBtn'];
+      this.removeCartItems = translations['shoppingcartpage.removeCartItems'];
+    });
+
     this.shoppingCartService.getCartItems().subscribe((items) => {
       this.cartItems = items;
       console.log(this.cartItems);
